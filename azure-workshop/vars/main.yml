@@ -3,4 +3,10 @@
 
 sub_id: "sample_id"
 resource_group: ""
-rg_policy: "{{ lookup('file', '/tmp/rg_policy.json') }}"
+rg_policy: "Test RG Policy 2"
+
+
+sub_base_url: "https://management.azure.com/subscriptions" 
+api_v: "2021-06-01"
+
+policy_creation_url: "{{ sub_base_url }}/{{ sub_id }}/providers/Microsoft.Authorization/policyDefinitions/{{ rg_policy }}?api-version={{ api_v }}"

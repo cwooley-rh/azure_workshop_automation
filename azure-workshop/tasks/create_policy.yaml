@@ -5,16 +5,23 @@
 #     src: rg_policy.j2
 #     dest: /tmp/rg_policy.json
 
-- name: Update scaleset info using azure_rm_resource
-  azure.azcollection.azure_rm_resource:
-    resource_group: "{{ resource_group }}"
-    provider: compute
-    resource_type: resourcegroup
-    resource_name: "{{ rg_policy }}"
-    api_version: "2017-12-01"
+# - name: Create Azure Policy 
+#   azure.azcollection.azure_rm_resource:
+#     provider: "ResourceGroups"
+#     resource_type: resourcegroup
+#     resource_name: "{{ rg_policy }}"
+#     api_version: "2020-01-01"
+#     body: "{{ lookup ('file', 'rg-policy.json') }}"
+#   register: output
+#   failed_when: output.rc == 0 
+
+- name: trying with URI
+  uri:
+    url: "{{ policy_creation_url }}"
+    method: PUT
+    body_format: json
     body: "{{ lookup ('file', 'rg-policy.json') }}"
-  register: output
-  failed_when: output.rc == 0 
+
 
 - name: debugging 
   debug:
