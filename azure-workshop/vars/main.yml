@@ -3,7 +3,7 @@
 
 sub_id: "24a8ecf7-164a-4b35-9319-d40147f806f0e_id"
 resource_group: ""
-rg_policy: "Test%20RG%20Policy%202"
+rg_policy: "Test_RG_Policy_2"
 
 
 sub_base_url: "https://management.azure.com/subscriptions" 
