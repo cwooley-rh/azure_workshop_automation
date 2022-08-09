@@ -19,6 +19,8 @@
   uri:
     url: "{{ policy_creation_url }}"
     method: PUT
+    headers:
+      Authorization: Bearer "{{ azure_secret }}"
     body_format: json
     body: "{{ lookup ('file', 'rg-policy.json') }}"
 
