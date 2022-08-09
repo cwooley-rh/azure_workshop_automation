@@ -13,6 +13,10 @@
     resource_name: "{{ rg_policy }}"
     api_version: "2017-12-01"
     body: "{{ rg_policy }}"
+  register: output
+
+- debug:
+    msg: "{{ output.stderr }}"
 
 - name: Create Resource Group Policy
   azure.azcollection.azure_rm_devtestlabpolicy:
