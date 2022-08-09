@@ -18,7 +18,7 @@
 
 - name: debugging 
   debug:
-    msg: "{{ output.stdout }}"
+    msg: "{{ output }}"
 
 - name: Create Resource Group Policy
   azure.azcollection.azure_rm_devtestlabpolicy:
