@@ -3,4 +3,4 @@
 
 sub_id: "sample_id"
 resource_group: ""
-rg_policy: "{{ lookup('file', 'sub_rg_policy.json') | from_json }}"
+rg_policy: "{{ lookup('file', '/tmp/rg_policy.json') }}"

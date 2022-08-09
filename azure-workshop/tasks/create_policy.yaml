@@ -1,5 +1,10 @@
 --- 
 
+- name: create the json from the template
+  template:
+    src: rg_policy.j2
+    dest: /tmp/rg_policy.json
+
 - name: Update scaleset info using azure_rm_resource
   azure.azcollection.azure_rm_resource:
     resource_group: "{{ resource_group }}"
