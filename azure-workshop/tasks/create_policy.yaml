@@ -16,7 +16,8 @@
   register: output
   failed_when: output.rc == 0 
 
-- debug:
+- name: debugging 
+  debug:
     msg: "{{ output.stderr }}"
 
 - name: Create Resource Group Policy
