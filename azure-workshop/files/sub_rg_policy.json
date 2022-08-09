@@ -1,0 +1,38 @@
+{
+    "properties": {
+      "displayName": "Test RG Policy",
+      "policyType": "Custom",
+      "mode": "All",
+      "description": "Allow only the creation of RGs named 'aro-'",
+      "parameters": {},
+      "policyRule": {
+        "if": {
+          "allOf": [
+            {
+              "field": "type",
+              "equals": "Microsoft.Resources/subscriptions/resourceGroups"
+            },
+            {
+              "field": "name",
+              "notMatch": "aro-........"
+            },
+            {
+              "field": "name",
+              "notMatch": "user-#"
+            },
+            {
+              "field": "name",
+              "notMatch": "user-##"
+            },
+            {
+              "field": "name",
+              "notMatch": "user-###"
+            }
+          ]
+        },
+        "then": {
+          "effect": "deny"
+        }
+      }
+    }
+  }

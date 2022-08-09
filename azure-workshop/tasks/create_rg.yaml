@@ -1,0 +1,29 @@
+---
+
+- name: Create a resource group
+  azure_rm_resourcegroup:
+    name: "user-{{ item }}"
+    location: eastus
+    subscription_id: "{{ sub_id }}"
+    tags:
+        testing: testing
+        delete: never
+  with_sequence: count=10
+
+
+
+# az policy definition create --name
+#                             [--description]
+#                             [--display-name]
+#                             [--management-group]
+#                             [--metadata]
+#                             [--mode]
+#                             [--params]
+#                             [--rules]
+
+
+
+
+
+# https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-cli
+

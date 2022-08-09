@@ -1,0 +1,19 @@
+--- 
+
+- name: Update scaleset info using azure_rm_resource
+  azure.azcollection.azure_rm_resource:
+    resource_group: "{{ resource_group }}"
+    provider: compute
+    resource_type: resourcegroup
+    resource_name: "{{ rg_policy }}"
+    api_version: "2017-12-01"
+    body: "{{ rg_policy }}"
+
+- name: Create Resource Group Policy
+  azure.azcollection.azure_rm_devtestlabpolicy:
+    resource_group: "{{ resource_group }}"
+    lab_name: myLab
+    policy_set_name: myPolicySet
+    name: myPolicy
+    fact_name: user_owned_lab_vm_count
+    threshold: 5

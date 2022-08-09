@@ -1,0 +1,5 @@
+---
+# tasks file for azure-workshop
+
+- name: Run Create Policy Playbook
+  include_tasks: create_policy.yaml

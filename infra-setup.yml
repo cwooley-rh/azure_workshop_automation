@@ -1,0 +1,9 @@
+---
+
+- hosts: "localhost"
+  connection: "local"
+
+  tasks:
+    - name: Run Azure Workshop Infra Creation Role
+      import_role:
+        name: azure-workshop
