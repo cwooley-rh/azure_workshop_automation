@@ -1,7 +1,7 @@
 ---
 # vars file for azure-workshop
 
-sub_id: "24a8ecf7-164a-4b35-9319-d40147f806f0e_id"
+sub_id: "24a8ecf7-164a-4b35-9319-d40147f806f0"
 resource_group: ""
 rg_policy: "Test_RG_Policy_2"
 
