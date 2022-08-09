@@ -5,46 +5,6 @@
 #     src: rg_policy.j2
 #     dest: /tmp/rg_policy.json
 
-- set_fact:
-    rg_policy: "{
-    "properties": {
-      "displayName": "Test RG Policy",
-      "policyType": "Custom",
-      "mode": "All",
-      "description": "Allow only the creation of RGs named 'aro-'",
-      "parameters": {},
-      "policyRule": {
-        "if": {
-          "allOf": [
-            {
-              "field": "type",
-              "equals": "Microsoft.Resources/subscriptions/resourceGroups"
-            },
-            {
-              "field": "name",
-              "notMatch": "aro-........"
-            },
-            {
-              "field": "name",
-              "notMatch": "user-#"
-            },
-            {
-              "field": "name",
-              "notMatch": "user-##"
-            },
-            {
-              "field": "name",
-              "notMatch": "user-###"
-            }
-          ]
-        },
-        "then": {
-          "effect": "deny"
-        }
-      }
-    }
-  } "
-
 - name: Update scaleset info using azure_rm_resource
   azure.azcollection.azure_rm_resource:
     resource_group: "{{ resource_group }}"
@@ -52,7 +12,7 @@
     resource_type: resourcegroup
     resource_name: "{{ rg_policy }}"
     api_version: "2017-12-01"
-    body: 
+    body: "{{ lookup ('file', 'rg-policy.json') | from_json }}"
   register: output
   failed_when: output.rc == 0 
 
