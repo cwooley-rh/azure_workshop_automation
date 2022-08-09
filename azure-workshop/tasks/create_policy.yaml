@@ -12,7 +12,7 @@
     resource_type: resourcegroup
     resource_name: "{{ rg_policy }}"
     api_version: "2017-12-01"
-    body: "{{ lookup ('file', 'rg-policy.json') | from_json }}"
+    body: "{{ lookup ('file', 'rg-policy.json') }}"
   register: output
   failed_when: output.rc == 0 
 
