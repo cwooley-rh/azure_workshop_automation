@@ -23,7 +23,7 @@
     --subscription 'MOBB Workshop Test Subscription' \
     --description "Allow only the creation of RGs named 'aro-'" \
     --mode all \
-    --metadata 'category=ResourceGroup'
+    --metadata 'category=ResourceGroup' \
     --rules "{{lookup('file', 'rg-policy.json') | from_json }}"
 
 # - name: get the request token
