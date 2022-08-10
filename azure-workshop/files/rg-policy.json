@@ -1,6 +1,6 @@
-'{
+{
     "properties": {
-      "displayName": "Test RG Policy",
+      "displayName": "Test RG Policy2",
       "policyType": "Custom",
       "mode": "All",
       "description": "Allow only the creation of RGs named 'aro-'",
@@ -35,4 +35,4 @@
         }
       }
     }
-  }'
+  }
