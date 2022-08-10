@@ -12,4 +12,21 @@
     assignable_scopes:
         - "/subscriptions/{{ sub.id }}/resourceGroups/user-{{ item }}"
   with_sequence: start=1 end=10
+  register: role_info
   tags: [ create, all ]
+
+- name:
+  debug:
+    msg: "{{ role_info }}"
+
+# - name: assign custom roles to the User RG's
+#   azure_rm_roleassignment:
+#     scope: /subscriptions/{{ sub.id }}
+#     assignee_object_id: /subscriptions/{{ sub.id }}/resourceGroups/user-{{ item }}
+#     role_definition_id:
+#       "/subscriptions/{{ sub.id }}/providers/Microsoft.Authorization/roleDefinitions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"  
+#   with_sequence: start=2 end=10
+#   tags: [ create, all ]
+
+
+  
