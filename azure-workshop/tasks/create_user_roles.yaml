@@ -17,7 +17,7 @@
 
 - name:
   debug:
-    msg: "{{ role_info.results }}"
+    msg: "{{ role_info.results | json_query('entry[*].id') }}"
   tags: [ create ]
 
 # - name: assign custom roles to the User RG's
