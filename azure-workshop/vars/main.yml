@@ -22,7 +22,7 @@ policy:
     category: "ResourceGroups"
   assign:
     scope: "{{ subscription }}"
-    assignID: "/subscriptions/24a8ecf7-164a-4b35-9319-d40147f806f0/providers/Microsoft.Authorization/policyAssignments/{{ policy.def.name }}"
+    assignID:
 
 
 
