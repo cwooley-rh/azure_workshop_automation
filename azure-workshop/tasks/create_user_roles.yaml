@@ -1,1 +1,14 @@
+---
 
+- name: create custom role for ARO workshop
+  azure_rm_roledefinition:
+    name: Custom Role for user-"{{ item }}"
+    scope: /subscriptions/{{ sub.id }}/resourceGroups/user-{{ item }}
+    permissions:
+        - actions:
+            - "Microsoft.Compute/virtualMachines/read"
+          data_actions:
+            - "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write"
+    assignable_scopes:
+        - "/subscriptions/{{ sub.id }}"
+  with_sequence: start=1 end=10

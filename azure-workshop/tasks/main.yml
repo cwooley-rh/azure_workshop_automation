@@ -1,8 +1,9 @@
 ---
 # tasks file for azure-workshop
 
-# - name: Run Create Policy Playbook
-#   include_tasks: create_policy.yaml
+- name: Run Create Policy Playbook
+  include_tasks: create_policy.yaml
+  tags: create
 
 - name: Run Create Resource Groups Playbook
   include_tasks: create_rg.yaml
@@ -10,4 +11,8 @@
 
 - name: Delete Resource Groups
   include_tasks: delete_rg.yaml
+  tags: delete
+
+- name: Delete Policy
+  include_tasks: delete_policy.yaml
   tags: delete

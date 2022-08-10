@@ -1,6 +1,13 @@
 # azure_workshop_automation
 
 
+## Pre Requisites
+
+``` bash
+az login
+az account set --subscription <sub_name>
+```
+
 1. Create/ Verify Resource Group policy
 *azure.azcollection.azure_rm_devtestlabpolicy*
 1. Create the User RG's 
@@ -13,7 +20,3 @@
 > nice to have a way 
 
 
-
-
-    # headers:
-    #   Authorization: Bearer "{{ azure_secret }}"

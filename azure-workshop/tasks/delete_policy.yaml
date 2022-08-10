@@ -1,0 +1,10 @@
+---
+
+- name: delete policy assignment
+
+- name: delete policy
+  shell: |
+    az policy assignment delete \
+    --scope "{{ policy.assign.scope }}" \
+    --policy "{{ policy.def.name }}" \
+    --subscription "{{ subscription }}"

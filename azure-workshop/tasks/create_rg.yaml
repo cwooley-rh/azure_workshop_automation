@@ -1,6 +1,6 @@
 ---
 
-- name: Create a resource group
+- name: Create a resource group for each user
   azure_rm_resourcegroup:
     name: "user-{{ item }}"
     location: eastus
@@ -9,18 +9,8 @@
         testing: workshop
   with_sequence: start=1 end=10
 
-  #count=10
 
 
-
-# az policy definition create --name
-#                             [--description]
-#                             [--display-name]
-#                             [--management-group]
-#                             [--metadata]
-#                             [--mode]
-#                             [--params]
-#                             [--rules]
 
 
 
