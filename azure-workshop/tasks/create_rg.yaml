@@ -4,10 +4,9 @@
   azure_rm_resourcegroup:
     name: "user-{{ item }}"
     location: eastus
-    subscription_id: "{{ sub_id }}"
+    subscription_id: "{{ sub.id }}"
     tags:
-        testing: testing
-        delete: never
+        testing: workshop
   with_sequence: count=10
 
 
