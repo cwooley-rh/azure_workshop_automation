@@ -10,8 +10,8 @@ azure_secret: !vault |
   39643863656332306537366635653961646233613935646238323132313439613966633038613537
   6462643433343163303363313431303332333930353763616264
 
-sub_id: "24a8ecf7-164a-4b35-9319-d40147f806f0"
-subscription: "MOBB Workshop Test Subscription"
+sub_id: 
+subscription: 
 resource_group: ""
 
 
@@ -21,10 +21,12 @@ policy:
     description: "Allow only the creation of RGs named 'aro-'"
     category: "ResourceGroups"
   assign:
-    scope: "{{ subscription }}"
+    scope: "/subscriptions/{{ sub.id }}/providers/Microsoft.Authorization/policyDefinitions/Test_RG_Policy_2"
     assignID:
 
-
+sub:
+  name: "MOBB Workshop Test Subscription"
+  id: "24a8ecf7-164a-4b35-9319-d40147f806f0"
 
 
 sub_base_url: "https://management.azure.com/subscriptions" 
