@@ -17,9 +17,9 @@
 
 - name: Shell out for policy creation
   shell: |
-  az policy definition create \
-  --name "\{{ rg_policy }}\" \
-  --rules {{lookup('file', 'rg-policy.json') }}
+    az policy definition create \
+    --name "{{ rg_policy }}" \
+    --rules {{lookup('file', 'rg-policy.json') }}
 
 # - name: get the request token
 #   uri:
