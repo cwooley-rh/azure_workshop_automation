@@ -1,8 +1,8 @@
 ---
 
-- name: delete policy assignment
 
-- name: delete policy
+
+- name: delete policy assignment
   shell: |
     az policy assignment delete \
     --scope "{{ policy.assign.scope }}" \
