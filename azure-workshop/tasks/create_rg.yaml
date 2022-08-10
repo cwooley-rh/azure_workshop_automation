@@ -7,7 +7,9 @@
     subscription_id: "{{ sub.id }}"
     tags:
         testing: workshop
-  with_sequence: count=10
+  with_sequence: start=2 end=11
+
+  #count=10
 
 
 
