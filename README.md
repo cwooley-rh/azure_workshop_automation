@@ -11,3 +11,9 @@
 *azure.azcollection.azure_rm_roleassignment*
 1. Be able to divy out the users
 > nice to have a way 
+
+
+
+
+    # headers:
+    #   Authorization: Bearer "{{ azure_secret }}"
