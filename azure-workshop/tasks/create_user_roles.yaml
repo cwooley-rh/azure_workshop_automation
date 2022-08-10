@@ -17,7 +17,7 @@
 
 - name:
   debug:
-    msg: "{{ role_info.results | json_query('*.id') }}"
+    var: role_info
   tags: [ create ]
 
 # - name: assign custom roles to the User RG's
