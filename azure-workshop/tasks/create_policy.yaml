@@ -39,7 +39,9 @@
   shell: |
     az policy assignment create \
     --scope "{{ policy.assign.scope }}" \
-    --policy "{{ policy.def.name }}" 
+    --policy "{{ policy.def.name }}" \
+    --subscription "{{ subscription }}"
+
 
 # - name: get the request token
 #   uri:
