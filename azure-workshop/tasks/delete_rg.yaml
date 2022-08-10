@@ -1,0 +1,7 @@
+---
+
+- name: Delete the resource groups tagged Workshop
+  azure_rm_resourcegroup:
+    name: "user-{{ item }}"
+    state: absent
+  with_sequence: start=2 end=11 

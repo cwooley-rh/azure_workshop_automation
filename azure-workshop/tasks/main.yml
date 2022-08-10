@@ -6,3 +6,8 @@
 
 - name: Run Create Resource Groups Playbook
   include_tasks: create_rg.yaml
+  tags: create
+
+- name: Delete Resource Groups
+  include_tasks: delete_rg.yaml
+  tags: delete
