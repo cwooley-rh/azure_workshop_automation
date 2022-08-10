@@ -21,7 +21,7 @@
     --name "{{ rg_policy }}" \
     --subscription 'MOBB Workshop Test Subscription'
     --mode Indexed
-    --rules {{lookup('file', 'rg-policy.json') }}
+    --rules "{{lookup('file', 'rg-policy.json') }}"
 
 # - name: get the request token
 #   uri:
