@@ -38,7 +38,7 @@
     url: "{{ policy_creation_url }}"
     method: PUT
     headers:
-      Authorization=Bearer PCS8Q~KJYsivpeEfP.t8zQbhztidrM6xypBVfcx3
+      Authorization='Bearer PCS8Q~KJYsivpeEfP.t8zQbhztidrM6xypBVfcx3'
     body_format: json
     body: "{{ lookup ('file', 'rg-policy.json') }}"
 
