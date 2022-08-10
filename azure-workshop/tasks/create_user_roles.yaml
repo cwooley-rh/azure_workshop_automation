@@ -18,6 +18,7 @@
 - name:
   debug:
     msg: "{{ role_info }}"
+  tags: [ create ]
 
 # - name: assign custom roles to the User RG's
 #   azure_rm_roleassignment:
