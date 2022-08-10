@@ -20,7 +20,7 @@
     az policy definition create \
     --name "{{ rg_policy }}" \
     --subscription 'MOBB Workshop Test Subscription' \
-    --mode all
+    --mode all \
     --rules "{{lookup('file', 'rg-policy.json') }}"
 
 # - name: get the request token
