@@ -1,31 +1,29 @@
 {
-    "policyRule": {
-        "if": {
-            "allOf": [
-            {
-                "field": "type",
-                "equals": "Microsoft.Resources/subscriptions/resourceGroups"
-            },
-            {
-                "field": "name",
-                "notMatch": "aro-........"
-            },
-            {
-                "field": "name",
-                "notMatch": "user-#"
-            },
-            {
-                "field": "name",
-                "notMatch": "user-##"
-            },
-            {
-                "field": "name",
-                "notMatch": "user-###"
-            }
-            ]
+    "if": {
+        "allOf": [
+        {
+            "field": "type",
+            "equals": "Microsoft.Resources/subscriptions/resourceGroups"
         },
-        "then": {
-            "effect": "deny"
+        {
+            "field": "name",
+            "notMatch": "aro-........"
+        },
+        {
+            "field": "name",
+            "notMatch": "user-#"
+        },
+        {
+            "field": "name",
+            "notMatch": "user-##"
+        },
+        {
+            "field": "name",
+            "notMatch": "user-###"
         }
+        ]
+    },
+    "then": {
+        "effect": "deny"
     }
-}
+}   
