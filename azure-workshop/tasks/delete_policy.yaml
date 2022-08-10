@@ -9,3 +9,11 @@
     --scope "{{ policy.assign.scope }}" \
     --subscription "{{ subscription }}"
   tags: [ delete, all ]
+
+- name: delete policy definition
+  shell: |
+    az policy assignment delete \
+    --name "{{ policy.def.name }}" \
+    --scope "{{ policy.assign.scope }}" \
+    --subscription "{{ subscription }}"
+  
