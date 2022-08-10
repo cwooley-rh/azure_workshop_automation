@@ -5,7 +5,7 @@
 - name: delete policy assignment
   shell: |
     az policy assignment delete \
+    --name "{{ policy.def.name }}" \
     --scope "{{ policy.assign.scope }}" \
-    --policy "{{ policy.def.name }}" \
     --subscription "{{ subscription }}"
   tags: delete
