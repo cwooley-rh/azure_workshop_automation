@@ -26,10 +26,14 @@
     --metadata 'category={{ policy.def.category }}' \
     --rules "{{lookup('file', 'rg-policy.json') | from_json }}"
 
-- name: sleep for 30s and continue 
+- name: sleep for 10s and continue 
   wait_for:
-    timeout: 30
+    timeout: 10
   delegate_to: localhost
+
+# - name: getting policy list
+#   shell: |
+#     az policy definition list
 
 - name: Shell out for policy assignment
   shell: |
