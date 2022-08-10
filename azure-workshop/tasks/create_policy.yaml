@@ -18,13 +18,20 @@
 - name: Shell out for policy creation
   shell: |
     az policy definition create \
-    --name "{{ rg_policy }}" \
-    --display-name "{{ rg_policy }}" \
-    --subscription 'MOBB Workshop Test Subscription' \
-    --description "Allow only the creation of RGs named 'aro-'" \
+    --name "{{ policy.def.name }}" \
+    --display-name "{{ policy.def.name }}" \
+    --subscription "{{ subscription }}" \
+    --description "{{ policy.def.description }}" \
     --mode all \
-    --metadata 'category=ResourceGroup' \
+    --metadata 'category={{ policy.def.category }}' \
     --rules "{{lookup('file', 'rg-policy.json') | from_json }}"
+
+
+- name: Shell out for policy assignment
+  shell: |
+    az policy assignment create \
+    --scope "{{ policy.assign.scope }}" \
+    --policy "{{ policy.def.name }}" 
 
 # - name: get the request token
 #   uri:
