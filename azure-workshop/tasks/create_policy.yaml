@@ -15,6 +15,12 @@
 #   register: output
 #   failed_when: output.rc == 0 
 
+- name: Shell out for policy creation
+  shell: |
+  az policy definition create \
+  --name "{{ rg_policy }}""
+  --rules rg-policy.json
+
 # - name: get the request token
 #   uri:
 #     method: PUT
@@ -43,9 +49,9 @@
 #     body: "{{ lookup ('file', 'rg-policy.json') }}"
 
 
-# - name: debugging 
-#   debug:
-#     msg: "{{ output }}"
+- name: debugging 
+  debug:
+    msg: "{{ output }}"
 
 - name: Create Resource Group Policy
   azure.azcollection.azure_rm_devtestlabpolicy:
