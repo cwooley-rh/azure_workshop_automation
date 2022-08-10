@@ -15,37 +15,37 @@
 #   register: output
 #   failed_when: output.rc == 0 
 
-- name: get the request token
-  uri:
-    method: PUT
-    url: https://login.microsoftonline.com/64dc69e4-d083-49fc-9569-ebece1dd1408/oauth2/v2.0/authorize?
-    body: |
-      grant_type=client_credentials
-      &redirect_uri=https%3A%2F%2Fredhat.com%2Fansible-app
-      &client_id=44c04d85-b57a-46fb-ba2c-11044eb5ddb3
-      &client_secret="{{ azure_secret }}"
-      &scope=https%3A%2F%2Fredhat.com%2Fansible-app%2Fuser_impersonation
-      &response_type=code
-      &response_mode=query
-  register: token_out
+# - name: get the request token
+#   uri:
+#     method: PUT
+#     url: https://login.microsoftonline.com/64dc69e4-d083-49fc-9569-ebece1dd1408/oauth2/v2.0/authorize?
+#     body: |
+#       grant_type=client_credentials
+#       &redirect_uri=https%3A%2F%2Fredhat.com%2Fansible-app
+#       &client_id=44c04d85-b57a-46fb-ba2c-11044eb5ddb3
+#       &client_secret="{{ azure_secret }}"
+#       &scope=https%3A%2F%2Fredhat.com%2Fansible-app%2Fuser_impersonation
+#       &response_type=code
+#       &response_mode=query
+#   register: token_out
 
-- name:
-  debug:
-    msg: "{{ token_out }}"
+# - name:
+#   debug:
+#     msg: "{{ token_out }}"
 
-- name: trying with URI
-  uri:
-    url: "{{ policy_creation_url }}"
-    method: PUT
-    headers:
-      Authorization='Bearer PCS8Q~KJYsivpeEfP.t8zQbhztidrM6xypBVfcx3'
-    body_format: json
-    body: "{{ lookup ('file', 'rg-policy.json') }}"
+# - name: trying with URI
+#   uri:
+#     url: "{{ policy_creation_url }}"
+#     method: PUT
+#     headers:
+#       Authorization='Bearer {{ auth_file??? }}'
+#     body_format: json
+#     body: "{{ lookup ('file', 'rg-policy.json') }}"
 
 
-- name: debugging 
-  debug:
-    msg: "{{ output }}"
+# - name: debugging 
+#   debug:
+#     msg: "{{ output }}"
 
 - name: Create Resource Group Policy
   azure.azcollection.azure_rm_devtestlabpolicy:
