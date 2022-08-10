@@ -8,4 +8,4 @@
     --name "{{ policy.def.name }}" \
     --scope "{{ policy.assign.scope }}" \
     --subscription "{{ subscription }}"
-  tags: delete
+  tags: [ delete, all ]

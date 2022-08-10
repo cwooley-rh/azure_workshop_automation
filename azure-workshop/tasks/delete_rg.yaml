@@ -7,4 +7,4 @@
     subscription_id: "{{ sub.id }}"
     state: absent
   with_sequence: start=2 end=11
-  tags: delete 
+  tags: [ delete, all ] 

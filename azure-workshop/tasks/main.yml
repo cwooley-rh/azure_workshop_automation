@@ -3,16 +3,16 @@
 
 - name: Run Create Policy Playbook
   include_tasks: create_policy.yaml
-  tags: create
+  tags: [ create, all ]
 
 - name: Run Create Resource Groups Playbook
   include_tasks: create_rg.yaml
-  tags: create
+  tags: [ create, all ]
 
 - name: Delete Resource Groups
   include_tasks: delete_rg.yaml
-  tags: delete
+  tags: [ delete, all ]
 
 - name: Delete Policy
   include_tasks: delete_policy.yaml
-  tags: delete
+  tags: [ delete, all ]

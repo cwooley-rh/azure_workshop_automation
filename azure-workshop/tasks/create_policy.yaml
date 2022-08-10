@@ -25,11 +25,13 @@
     --mode all \
     --metadata 'category={{ policy.def.category }}' \
     --rules "{{lookup('file', 'rg-policy.json') | from_json }}"
+  tags: [ create, all ]
 
 - name: sleep for 10s and continue 
   wait_for:
     timeout: 10
   delegate_to: localhost
+  tags: [ create, all ]
 
 # - name: getting policy list
 #   shell: |
@@ -40,7 +42,9 @@
     az policy assignment create \
     --scope "{{ policy.assign.scope }}" \
     --policy "{{ policy.def.name }}" \
-    --subscription "{{ subscription }}"
+    --subscription "{{ subscription }}" \
+    --name "{{ policy.def.name }}"
+  tags: [ create, all ]
 
 
 # - name: get the request token

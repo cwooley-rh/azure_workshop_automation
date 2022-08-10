@@ -12,3 +12,4 @@
     assignable_scopes:
         - "/subscriptions/{{ sub.id }}"
   with_sequence: start=1 end=10
+  tags: [ create, all ]
