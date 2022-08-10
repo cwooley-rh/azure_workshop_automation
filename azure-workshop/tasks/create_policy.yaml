@@ -37,7 +37,7 @@
   uri:
     url: "{{ policy_creation_url }}"
     method: PUT
-    body_format: application/json
+    body_format: json
     body: "{{ lookup ('file', 'rg-policy.json') }}"
 
 
