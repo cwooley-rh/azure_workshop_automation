@@ -1,4 +1,4 @@
-{
+'{
     "properties": {
       "displayName": "Test RG Policy",
       "policyType": "Custom",
@@ -35,4 +35,4 @@
         }
       }
     }
-  }
+  }'
