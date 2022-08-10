@@ -19,8 +19,11 @@
   shell: |
     az policy definition create \
     --name "{{ rg_policy }}" \
+    --display-name "{{ rg_policy }}" \
     --subscription 'MOBB Workshop Test Subscription' \
+    --description "Allow only the creation of RGs named 'aro-'" \
     --mode all \
+    --metadata 'category=ResourceGroup'
     --rules "{{lookup('file', 'rg-policy.json') | from_json }}"
 
 # - name: get the request token
@@ -49,17 +52,3 @@
 #       Authorization='Bearer {{ auth_file??? }}'
 #     body_format: json
 #     body: "{{ lookup ('file', 'rg-policy.json') }}"
-
-
-- name: debugging 
-  debug:
-    msg: "{{ output }}"
-
-- name: Create Resource Group Policy
-  azure.azcollection.azure_rm_devtestlabpolicy:
-    resource_group: "{{ resource_group }}"
-    lab_name: myLab
-    policy_set_name: myPolicySet
-    name: myPolicy
-    fact_name: user_owned_lab_vm_count
-    threshold: 5
