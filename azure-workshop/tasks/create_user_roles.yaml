@@ -17,12 +17,12 @@
 
 - name: getting roleid
   set_fact:
-    ids: "{{ role_info.results | to_dict }}"
+    ids: "{{ role_info.results }}"
   tags: create
 
 - name:
   debug:
-    msg: "{{ ids | type_debug }}"
+    msg: "{{ ids | json_query("results[].[id]") }}"
   tags: create
 # - name:
 #   copy:
