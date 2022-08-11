@@ -17,27 +17,31 @@
 
 - name: getting roleid
   set_fact:
-    ids: "{{ (role_info |  json_query('results[].[id]'))[0] }}"
+    ids: "{{ role_info |  json_query('results[].[id]') }}"
   tags: create
 
 - name:
   debug:
-    msg: "{{ ids }}"
+    msg: "{{ ids  }}"
   tags: create
+
+# - name: getting roleid
+#   set_fact:
+#     users: "{{ role_info |  json_query('results[].[item]') }}"
+#   tags: create
 # - name:
 #   copy:
 #     content: "{{ role_info.results }}"
 #     dest: /tmp/role_out.json
 #   tags: [ create ]
 
-# - name: assign custom roles to the User RG's
-#   azure_rm_roleassignment:
-#     scope: /subscriptions/{{ sub.id }}
-#     assignee_object_id: /subscriptions/{{ sub.id }}/resourceGroups/user-{{ item }}
-#     role_definition_id:
-#       "/subscriptions/{{ sub.id }}/providers/Microsoft.Authorization/roleDefinitions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"  
-#   with_sequence: start=2 end=10
-#   tags: [ create, all ]
+- name: assign custom roles to the User RG's
+  azure_rm_roleassignment:
+    scope: /subscriptions/{{ sub.id }}
+    assignee_object_id: /subscriptions/{{ sub.id }}/resourceGroups/user-{{ item }}
+    role_definition_id: "{{ ids[item] }}"  
+  with_sequence: start=2 end=10
+  tags: [ create, all ]
 
 
   
