@@ -18,11 +18,12 @@
 - name:
   debug:
     msg: "{{ role_info.results }}"
+  tags: create
 
 - name:
   debug:
     msg: "{{ role_info.results | json_query('roledefinitions[].[id]') }}"
-
+  tags: create
 # - name:
 #   copy:
 #     content: "{{ role_info.results }}"
