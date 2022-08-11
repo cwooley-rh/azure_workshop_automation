@@ -16,7 +16,7 @@
   tags: [ create, all ]
 
 - name: getting roleid
-  fact:
+  set_fact:
     ids: "{{ role_info.results | json_query('roledefinitions[].[id]') }}"
   tags: create
 
