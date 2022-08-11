@@ -15,9 +15,9 @@
   register: role_info
   tags: [ create, all ]
 
-- name:
+- name: getting roleid
   fact:
-    ids: "{{ role_info.results | json_query("roledefinitions[].[id]") }}"
+    ids: "{{ role_info.results | json_query('roledefinitions[].[id]') }}"
   tags: create
 
 - name:
