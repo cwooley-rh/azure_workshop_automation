@@ -22,7 +22,7 @@
 
 - name:
   debug:
-    msg: "{{ role_info.results[] }}"
+    msg: "{{ ids }}"
   tags: create
 # - name:
 #   copy:
