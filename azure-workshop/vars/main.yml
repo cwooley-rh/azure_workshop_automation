@@ -33,3 +33,16 @@ sub_base_url: "https://management.azure.com/subscriptions"
 api_v: "2021-06-01"
 
 policy_creation_url: "{{ sub_base_url }}/{{ sub_id }}/providers/Microsoft.Authorization/policyDefinitions/{{ rg_policy }}?api-version={{ api_v }}"
+
+
+user_list:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9

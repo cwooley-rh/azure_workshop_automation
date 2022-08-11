@@ -48,9 +48,7 @@
     scope: /subscriptions/{{ sub.id }}
     assignee_object_id: /subscriptions/{{ sub.id }}/resourceGroups/user-{{ item }}
     role_definition_id: "{{ ids[item] }}"  
-  with_items:
-    - 0
-    - 1
+  with_items: "{{ user_list }}"
   tags: [ create, all ]
 
 
