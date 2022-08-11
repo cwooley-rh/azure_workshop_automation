@@ -43,13 +43,15 @@
 #     dest: /tmp/role_out.json
 #   tags: [ create ]
 
-# - name: assign custom roles to the User RG's
-#   azure_rm_roleassignment:
-#     scope: /subscriptions/{{ sub.id }}
-#     assignee_object_id: /subscriptions/{{ sub.id }}/resourceGroups/user-{{ item }}
-#     role_definition_id: "{{ ids[item] }}"  
-#   with_sequence: start=0 end=9
-#   tags: [ create, all ]
+- name: assign custom roles to the User RG's
+  azure_rm_roleassignment:
+    scope: /subscriptions/{{ sub.id }}
+    assignee_object_id: /subscriptions/{{ sub.id }}/resourceGroups/user-{{ item }}
+    role_definition_id: "{{ ids[item] }}"  
+  with_items:
+    - 0
+    - 1
+  tags: [ create, all ]
 
 
   
