@@ -17,13 +17,13 @@
 
 - name:
   debug:
-    msg: "{{ role_info.results }}"
+    msg: "{{ role_info }}"
   tags: create
 
-- name:
-  debug:
-    msg: "{{ role_info.role_definition_id }}"
-  tags: create
+# - name:
+#   debug:
+#     msg: "{{ role_info.role_definition_id }}"
+#   tags: create
 # - name:
 #   copy:
 #     content: "{{ role_info.results }}"
