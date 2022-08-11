@@ -17,7 +17,7 @@
 
 - name:
   debug:
-    msg: "{{ role_info.results | from_json | map(attribute='id') | list }}"
+    msg: "{{ role_info.results | to_json | map(attribute='id') | list }}"
   tags: [ create ]
 
 # - name: assign custom roles to the User RG's
