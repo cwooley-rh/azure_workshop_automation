@@ -16,8 +16,8 @@
   tags: [ create, all ]
 
 - name:
-  debug:
-    msg: "{{ role_info }}"
+  fact:
+    ids: "{{ role_info.results | json_query("roledefinitions[].[id]") }}"
   tags: create
 
 - name:
