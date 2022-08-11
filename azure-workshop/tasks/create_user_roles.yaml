@@ -22,7 +22,7 @@
 
 - name:
   debug:
-    msg: "ids={{ ids }}\nid1={{ ids[0] }}"
+    msg: "ids={{ ids }} id1={{ ids[0][0] }}"
   tags: create
 
 # - name: getting roleid
