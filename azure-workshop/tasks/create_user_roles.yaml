@@ -17,6 +17,10 @@
 
 - name:
   debug:
+    msg: "{{ role_info.results }}"
+
+- name:
+  debug:
     msg: "{{ role_info.results | json_query('roledefinitions[].[id]') }}"
 
 # - name:
