@@ -22,7 +22,7 @@
 
 - name:
   debug:
-    msg: "{{ role_info.results | json_query('roledefinitions[].[id]') }}"
+    msg: "{{ role_info.role_definition_id }}"
   tags: create
 # - name:
 #   copy:
