@@ -22,7 +22,7 @@
 
 - name:
   debug:
-    msg: "{{ ids | json_query("results[].[id]") }}"
+    msg: "{{ ids | json_query('results[].[id]') }}"
   tags: create
 # - name:
 #   copy:
