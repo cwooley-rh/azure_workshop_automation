@@ -44,7 +44,7 @@
   azure_rm_roleassignment:
     scope: /subscriptions/{{ sub.id }}
     assignee_object_id: /subscriptions/{{ sub.id }}/resourceGroups/user-{{ item }}
-    role_definition_id: "{{ ids.[item] }}"  
+    role_definition_id: "{{ ids{{[item]}} }}"  
   with_sequence: start=0 end=9
   tags: [ create, all ]
 
