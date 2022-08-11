@@ -22,7 +22,7 @@
 
 - name:
   debug:
-    msg: "{{ ids }}"
+    msg: "{{ ids | type_debug }}"
   tags: create
 # - name:
 #   copy:
