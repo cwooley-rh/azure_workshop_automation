@@ -22,7 +22,7 @@
 
 - name:
   debug:
-    msg: "ids={{ ids }} id1={{ ids[0][0] }} id2={{ ids[1][0] }}"
+    msg: "ids={{ ids }} id1={{ ids[0][0] }} id2={{ ids[1][0] }} type= {{ ids | type_debug }}"
   tags: create
 
 # - name: getting roleid
@@ -35,13 +35,13 @@
 #     dest: /tmp/role_out.json
 #   tags: [ create ]
 
-- name: assign custom roles to the User RG's
-  azure_rm_roleassignment:
-    scope: /subscriptions/{{ sub.id }}
-    assignee_object_id: /subscriptions/{{ sub.id }}/resourceGroups/user-{{ item }}
-    role_definition_id: "{{ ids[item][0] }}"  
-  with_sequence: start=0 end=9
-  tags: [ create, all ]
+# - name: assign custom roles to the User RG's
+#   azure_rm_roleassignment:
+#     scope: /subscriptions/{{ sub.id }}
+#     assignee_object_id: /subscriptions/{{ sub.id }}/resourceGroups/user-{{ item }}
+#     role_definition_id: "{{ ids[item][0] }}"  
+#   with_sequence: start=0 end=9
+#   tags: [ create, all ]
 
 
   
