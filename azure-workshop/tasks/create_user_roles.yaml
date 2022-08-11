@@ -16,8 +16,9 @@
   tags: [ create, all ]
 
 - name:
-  debug:
-    msg: "{{ role_info.results | to_json | json_query('*.id')}}"
+  copy:
+    content: "{{ role_info.results }}"
+    dest: /tmp/role_out.json
   tags: [ create ]
 
 # - name: assign custom roles to the User RG's
