@@ -3,7 +3,7 @@
 - name: Delete the resource groups
   azure_rm_resourcegroup:
     name: "user-{{ item }}"
-    location: eastus
+    location: "{{ location }}"
     subscription_id: "{{ sub.id }}"
     state: absent
   with_sequence: start=2 end=11

@@ -3,7 +3,7 @@
 - name: Create a resource group for each user
   azure_rm_resourcegroup:
     name: "user-{{ item }}"
-    location: eastus
+    location: "{{ location }}"
     subscription_id: "{{ sub.id }}"
     tags:
         testing: workshop

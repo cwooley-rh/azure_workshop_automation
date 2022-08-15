@@ -1,5 +1,8 @@
 ---
 # tasks file for azure-workshop
+- name: Run Create tenant Playbook
+  include_tasks: create_tenant.yaml
+  tags: [ creat, all]
 
 - name: Run Create Policy Playbook
   include_tasks: create_policy.yaml
@@ -9,6 +12,10 @@
   include_tasks: create_rg.yaml
   tags: [ create, all ]
 
+- name: Run Create User
+  include_tasks: create_users.yaml
+  tags: [ create, all]
+  
 - name: Run Create User Roles Playbook
   include_tasks: create_user_roles.yaml
   tags: [ create, all ]

@@ -1,0 +1,22 @@
+---
+
+- name: create deployment tenant
+  shell: |
+    az deployment tenant create \
+    --location "{{ location }}" \
+    --name "{{ tenant.name }}"
+    --template-file "{{ lookup('file', 'workshop_tenant.json') | from_json }}"
+                            [--confirm-with-what-if]
+                            [--handle-extended-json-format]
+                            [--name]
+                            [--no-prompt {false, true}]
+                            [--no-wait]
+                            [--parameters]
+                            [--proceed-if-no-change]
+                            [--query-string]
+                            [--template-file]
+                            [--template-spec]
+                            [--template-uri]
+                            [--what-if]
+                            [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange, Unsupported}]
+                            [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]

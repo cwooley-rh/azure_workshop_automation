@@ -14,6 +14,15 @@ sub_id:
 subscription: 
 resource_group: ""
 
+location: "eastus"
+
+user:
+  principle_base: ""
+
+tenant:
+  id: ""
+  name: ""
+
 
 policy:
   def:

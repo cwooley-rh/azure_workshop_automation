@@ -1,0 +1,17 @@
+---
+
+- name: create AAD Users
+  azure_rm_aduser:
+    user_principal_name: "{{ user_id }}"
+    tenant: "{{ tenant.id }}"
+    state: "present"
+    account_enabled: "True"
+    display_name: "user-{{ item }}"
+    password_profile: "password{{ item }}"
+    immutable_id: "{{ object_id }}"
+    user_type: "Member"
+    usage_location: "US"
+    subscription: "{{ sub.id }}"
+  with_sequence: start=0 end=9
+
+# need to now store the AAD User Principle ID to pass to the User Role assignment
