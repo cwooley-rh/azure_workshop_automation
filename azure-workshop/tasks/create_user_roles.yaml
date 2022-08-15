@@ -20,29 +20,6 @@
     ids: "{{ role_info |  json_query('results[].[id]') | flatten }}"
   tags: create
 
-- name:
-  debug:
-    msg: "{{ ids[item] }}"
-  with_items:
-    - 0
-    - 1
-  tags: create
-
-# - name:
-#   debug:
-#     msg: "ids={{ ids }} id1={{ ids[0][0] }} id2={{ ids[0][1] }} type= {{ ids | type_debug }}"
-#   tags: create
-
-# - name: getting roleid
-#   set_fact:
-#     users: "{{ role_info |  json_query('results[].[item]') }}"
-#   tags: create
-# - name:
-#   copy:
-#     content: "{{ role_info.results }}"
-#     dest: /tmp/role_out.json
-#   tags: [ create ]
-
 - name: assign custom roles to the User RG's
   azure_rm_roleassignment:
     scope: /subscriptions/{{ sub.id }}

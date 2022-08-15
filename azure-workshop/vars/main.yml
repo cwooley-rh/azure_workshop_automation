@@ -20,9 +20,9 @@ user:
   principle_base: ""
 
 tenant:
-  id: ""
-  name: ""
-  domain: ""
+  id: "64dc69e4-d083-49fc-9569-ebece1dd1408"
+  name: "redhat.com"
+  domain: "redhat0.onmicrosoft.com"
 
 
 policy:

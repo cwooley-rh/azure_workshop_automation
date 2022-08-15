@@ -2,7 +2,7 @@
 
 - name: create AAD Users
   azure_rm_aduser:
-    user_principal_name: "user-{{ item }}{{ tenant.domain }}"
+    user_principal_name: "workshop-user-{{ item }}@{{ tenant.domain }}"
     tenant: "{{ tenant.id }}"
     state: "present"
     account_enabled: "True"
