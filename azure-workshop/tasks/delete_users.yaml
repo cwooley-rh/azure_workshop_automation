@@ -1,0 +1,9 @@
+---
+
+- name: Delete Users
+  azure_rm_aduser:
+    user_principal_name: "user-{{ item }}{{ tenant.domain}}"
+    tenant: "{{ tenant.id }}"
+    state: "absent"
+  with_sequence: start=0 end=9
+  tags: [ delete, all ]

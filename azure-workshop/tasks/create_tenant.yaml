@@ -20,3 +20,4 @@
                             [--what-if]
                             [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange, Unsupported}]
                             [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]
+  tags: [ create, all ]

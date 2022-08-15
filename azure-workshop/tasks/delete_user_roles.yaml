@@ -1,0 +1,17 @@
+---
+
+- name: Delete User Role assignments
+  azure_rm_roleassignment:
+    scope: "/subscriptions/{{ sub.id }}"
+    assignee_object_id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+    role_definition_id: "/subscriptions/{{ sub.id }}/providers/Microsoft.Authorization/roleDefinitions/{{ role.id }}"
+  tags: [ delete, all ]
+
+
+- name: Delete User Role Definitions
+  azure_rm_roledefinition:
+    name: myTestRole
+    scope: /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myresourceGroup
+    role_definition_id: "/subscriptions/{{ sub.id }}/providers/Microsoft.Authorization/roleDefinitions/{{ role.id }}"
+    state: absent
+  tags: [ delete, all ]

@@ -2,7 +2,7 @@
 # tasks file for azure-workshop
 - name: Run Create tenant Playbook
   include_tasks: create_tenant.yaml
-  tags: [ creat, all]
+  tags: [ create, all]
 
 - name: Run Create Policy Playbook
   include_tasks: create_policy.yaml
@@ -20,10 +20,18 @@
   include_tasks: create_user_roles.yaml
   tags: [ create, all ]
 
-- name: Delete Resource Groups
+- name: Run Delete Resource Groups Playbook
   include_tasks: delete_rg.yaml
   tags: [ delete, all ]
 
-- name: Delete Policy
+- name: Run Delete Policy Playbook
   include_tasks: delete_policy.yaml
+  tags: [ delete, all ]
+
+- name: Run Delete Users Playbook
+  include_tasks: delete_users.yaml
+  tags: [ delete, all ]
+
+- name: Run Delete User Roles
+  include_tasks: delete_user_roles.yaml
   tags: [ delete, all ]
