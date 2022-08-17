@@ -1,6 +1,6 @@
 ---
 
-- name: Create a resource group for each user
+- name: Create a resource group for each "user"
   azure_rm_resourcegroup:
     name: "user-{{ item }}"
     location: "{{ location }}"
